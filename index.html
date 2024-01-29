@@ -1,0 +1,225 @@
+<html>
+    <head>
+        <title>
+            JavaScript Practice
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+        <h1 id = "h1" class = ""> Bangladesh </h1>
+        <button onclick="AddStyle()">Add</button>
+        <button onclick="RemoveStyle()">Remove</button>
+
+        <!-- <input id = "num1"> <br>
+        <input id = "num2"> <br>
+        <button onclick = "AddTwoNumber()">Add</button> -->
+
+        <!-- <button onclick="Demo()"> Click </button> -->
+
+        <!-- <input onchange="MyEvent(this.value)" type="text" placeholder="Enter your name"> <br>
+        <input onkeydown="MyEvent(this.value)" type="text" placeholder="Enter your name"> <br>
+        <input onkeyup="MyEvent(this.value)" type="text" placeholder="Enter your name"> <br>  -->
+    
+        <!-- <button onclick = "MyEvent('click event')">Click Me</button>
+        <button onmouseover="MyEvent('mouseover event')">Mouse Over</button>
+        <button onmouseout="MyEvent('mouseout event')">Mouse Out</button>
+        <button onmousedown="MyEvent('mousedown event')">Mouse Down</button>
+        <button onmouseup="MyEvent('mouseup event')">Mouse Up</button> -->
+
+        <!-- <button onclick = "objAlert()">Alert</button> -->
+
+        <script>
+            function AddStyle(){
+                let h1Tag = document.getElementById("h1");
+                h1Tag.classList.add("text-primary");
+            }
+            function RemoveStyle(){
+                let h1Tag = document.getElementById("h1");
+                h1Tag.classList.remove("text-primary");
+            }
+
+            function AddTwoNumber(){
+                var num1 = document.getElementById("num1").value;
+                var num2 = document.getElementById("num2").value;
+                var result = parseInt(num1) + parseInt(num2);
+                alert(result);
+            }
+
+            function Demo(){
+                // var w = window.open("", "", "width=300, height=300");
+                // w.document.write("<h1>Hello World</h1>");
+                // w.document.close();
+
+                // document.open('text/html', 'replace');
+                // document.write("<h1>Hello World</h1>");
+                // document.close();
+
+                // //var infor = document.cookie;
+                // //var infor = document.lastModified; 
+                // //var infor = document.URL;
+                // var infor = document.title;
+                // document.getElementsByTagName("p")[0].innerHTML = infor;
+            }
+ 
+            function MyEvent(msg){
+                console.log(msg);
+            }
+
+            function MyEvent(msg){
+                console.log(msg);
+            }
+
+            navigator.geolocation.getCurrentPosition(function(position){
+                let altitue = position.coords.altitude;
+                let latitude = position.coords.latitude;
+                let longitude = position.coords.longitude;
+                let accuracy = position.coords.accuracy;
+                let altitudeAccuracy = position.coords.altitudeAccuracy;
+                let heading = position.coords.heading;
+                let speed = position.coords.speed;
+                let timestamp = position.timestamp;
+
+                document.write(
+                    "altitue: " + altitue + "<br>",
+                    "latitude: " + latitude + "<br>",
+                    "longitude: " + longitude + "<br>",
+                    "accuracy: " + accuracy + "<br>",
+                    "altitudeAccuracy: " + altitudeAccuracy + "<br>",
+                    "heading: " + heading + "<br>",
+                    "speed: " + speed + "<br>",
+                    "timestamp: " + timestamp + "<br>"
+                );
+            });
+
+            var appCodeName = navigator.appCodeName;
+            var appName = navigator.appName;
+            var appVersion = navigator.appVersion;
+            var cookieEnabled = navigator.cookieEnabled;
+            var platform = navigator.platform;
+            var userAgent = navigator.userAgent;
+            var javaEnabled = navigator.javaEnabled();
+            var onLine = navigator.onLine;
+            var language = navigator.language;
+            var product = navigator.product;
+            document.write(
+                "appCodeName: " + appCodeName + "<br>",
+                "appName: " + appName + "<br>",
+                "appVersion: " + appVersion + "<br>",
+                "cookieEnabled: " + cookieEnabled + "<br>",
+                "platform: " + platform + "<br>",
+                "userAgent: " + userAgent + "<br>",
+                "javaEnabled: " + javaEnabled + "<br>",
+                "onLine: " + onLine + "<br>",
+                "language: " + language + "<br>",
+                "product: " + product + "<br>"
+            );
+
+
+            setTimeout(function(){
+                alert("Hello World");
+            }, 3000);
+
+            function objAlert(){
+                alert("Hello World");
+            }
+            function objPrompt(){
+                let result = confirm("Are you sure?");
+                document.write(result);
+            }
+            function objOpen(){
+                window.open("https://www.google.com");
+            }
+            function objClose(){
+                window.close();
+            }
+
+            var num = 10.7;
+            document.write(
+                num.toString() + "<br>",
+                num.toExponential() + "<br>",
+                num.toFixed(2) + "<br>",
+                num.toPrecision(3) + "<br>",
+                num.valueOf() + "<br>",
+                Math.PI + "<br>",
+                Math.abs(num) + "<br>",
+                Math.ceil(num) + "<br>",
+                Math.floor(num) + "<br>",
+                Math.round(num) + "<br>",
+                Math.max(10, 20, 30, 40, 50) + "<br>",
+                Math.min(10, 20, 30, 40, 50) + "<br>",
+                Math.random() + "<br>",
+            )
+
+            new Date();
+            var date = new Date();
+            document.write(
+                date.getDate() + "<br>",
+                date.getDay() + "<br>",
+                date.getFullYear() + "<br>",
+                date.getHours() + "<br>",
+                date.getMinutes() + "<br>",
+                date.getSeconds() + "<br>",
+                date.getMilliseconds() + "<br>",
+                date.getMonth() + "<br>",
+            );
+
+            var country = "     Bangladesh         ";
+            var country1 = country.trim();
+            document.write(country);
+            document.write(country1.length);
+
+            var country1 = "Bangladesh";
+            var country2 = "India";
+            document.write(
+                country1.concat(country2 + "<br>")
+            )
+            document.write(
+                country1.lastIndexOf("d")
+            )
+            document.write(
+                country1.replace("desh", "India")
+            )
+            document.write(
+                country1.substring(0, 4)
+            )
+
+            var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            array.splice(4, 0, 11);
+            document.write(array);
+
+            var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            arr.splice(1, 3);
+            document.write(arr);
+
+            var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            var result = arr.slice(2, 5);
+            document.write(result);
+
+            var numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            numArray.forEach(function(num){
+                document.write(num + "<br>");
+            });
+            var result = numArray.indexOf(66);
+            document.write(5 + "index of " + result);
+
+            var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            var result = arr.find(function(num){
+                return num > 5
+            });
+            document.write("value " + result + "<br>");
+            var result = arr.findIndex(function(num){
+                return num > 5
+            });
+            document.write("index " + result);
+            
+            var numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            var result = numArray.filter(function(num){
+                return num > 5
+            });
+            document.write(result);
+        </script>
+    </body>
+
+</html>
